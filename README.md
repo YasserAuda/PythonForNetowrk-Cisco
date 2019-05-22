@@ -1,7 +1,10 @@
 # PythonForNetowrk-Cisco
 Here You will find all Python scripts used in Python for Cisco R&amp;S and Networking Professional [Free Arabic Videos Series]
+
 Videos will be start post after mid of June 2019
+
 YouTube Channel : https://www.youtube.com/user/yasserramzyauda
+
 Table of Contents
 
 Introduction to Computer Programming
