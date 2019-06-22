@@ -1,0 +1,36 @@
+except catch the error 
+
+def main():
+    fh = open('lines.txt')
+    for line in fh: print(line.strip())
+
+if __name__ == "__main__": main()
+======================================
+def main():
+  try:	
+    fh = open('xlines.txt')
+  except:
+     print("could not find file")
+  else:
+    for line in fh: print(line.strip())
+
+if __name__ == "__main__": main()
+==========================================
+def main():
+  try:	
+    fh = open('xlines.txt')
+  except IOError as e:
+     print("could not find file",e)
+  else:
+    for line in fh: print(line.strip())
+
+if __name__ == "__main__": main()
+=======================================
+def main():
+  try:	
+    fh = open('xlines.txt')
+    for line in fh: print(line.strip())
+  except IOError as e:
+     print("could not find file",e)
+
+if __name__ == "__main__": main()
