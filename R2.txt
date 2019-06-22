@@ -1,0 +1,106 @@
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable password cisco
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username yasser password 0 cisco
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback1
+ ip address 1.1.1.1 255.255.255.0
+!
+interface FastEthernet0/0
+ ip address 10.0.0.1 255.0.0.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 11.0.0.1 255.0.0.0
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 100
+ router-id 0.0.0.1
+ log-adjacency-changes
+ network 1.1.1.0 0.0.0.255 area 0
+ network 10.0.0.0 0.255.255.255 area 0
+ network 11.0.0.0 0.255.255.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+banner motd  ************************************************************************
+ 
+   WARNING: This Cisco system is for the use of authorized clients only.
+            Individuals using the computer network system without
+            authorization, or in excess of their authorization, are
+            subject to having all their activity on this computer
+            network system monitored and recorded by system
+            personnel.  To protect the computer network system from
+            unauthorized use and to ensure the computer network systems
+            is functioning properly, system administrators monitor this
+            system.  Anyone using this computer network system
+            expressly consents to such monitoring and is advised that
+            if such monitoring reveals possible conduct of criminal
+            activity, system personnel may provide the evidence of
+            such activity to law enforcement officers.
+ 
+            Access is restricted to authorized users only.
+            Unauthorized access is a violation of state and federal,
+            civil and criminal laws.
+************************************************************************** 
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+!
+!
+!
+end
+
